@@ -19,7 +19,9 @@ rm(list=ls())
 library(knitr)
 library(ggplot2)
 library(dplyr)
+library(GGally)
 library(lmtest)
+library(car)
 ```
 
 # I. Introduction and Research Questions
@@ -46,7 +48,6 @@ pollutionAVG = pollution %>% group_by(Region) %>%
                        CH4_AVG = mean(CH4_RUNEX),
                        N2O_AVG = mean(N2O_RUNEX),
                        GHG_AVG = mean(CO2_RUNEX + CH4_RUNEX + N2O_RUNEX))
-pollutionAVG = pollutionAVG[-1,]
 ```
 
 
@@ -55,28 +56,65 @@ pollutionAVG = pollutionAVG[-1,]
 ################################################
 ##########III. Data Visualization###############
 ################################################
-# Linear regression
+# Linear regression for CO2
 co2.model.avg = lm(CO2_AVG ~ Total.VMT + as.character(Fuel) + 
-                       as.character(Model.Year) + as.character(Region) +
-                       as.character(Speed), data = pollutionAVG)
-ch4.model.avg = lm(CH4_AVG ~ Total.VMT + as.character(Fuel) + 
-                       as.character(Model.Year) + as.character(Region) +
-                       as.character(Speed), data = pollutionAVG)
-n2o.model.avg = lm(N2O_AVG ~ Total.VMT + as.character(Fuel) + 
-                       as.character(Model.Year) + as.character(Region) +
-                       as.character(Speed), data = pollutionAVG)
-ghg.model.avg = lm(GHG_AVG ~ Total.VMT + as.character(Fuel) + 
                        as.character(Model.Year) + as.character(Region) +
                        as.character(Speed), data = pollutionAVG)
 par(mfrow = c(2, 2))
 plot(co2.model.avg)
+summary(co2.model.avg)
+# Multicollinearity (no issue)
+vif(co2.model.avg)
+# Constant variance test (no issue)
+bptest = bptest(co2.model.avg)
+bptest
+```
+
+```{r}
+# Linear regression for CH4
+ch4.model.avg = lm(CH4_AVG ~ Total.VMT + as.character(Fuel) + 
+                       as.character(Model.Year) + as.character(Region) +
+                       as.character(Speed), data = pollutionAVG)
 par(mfrow = c(2, 2))
 plot(ch4.model.avg)
+summary(ch4.model.avg)
+# Multicollinearity (no issue)
+vif(ch4.model.avg)
+# Constant variance test (no issue)
+bptest = bptest(ch4.model.avg)
+bptest
+```
+
+```{r}
+# Linear regression for N2O
+n2o.model.avg = lm(N2O_AVG ~ Total.VMT + as.character(Fuel) + 
+                       as.character(Model.Year) + as.character(Region) +
+                       as.character(Speed), data = pollutionAVG)
 par(mfrow = c(2, 2))
 plot(n2o.model.avg)
+summary(n2o.model.avg)
+# Multicollinearity (no issue)
+vif(n2o.model.avg)
+# Constant variance test (p-value = 0.04228 around the rejection region)
+bptest = bptest(n2o.model.avg)
+bptest
+```
+
+```{r}
+# Linear regression for GHG
+ghg.model.avg = lm(GHG_AVG ~ Total.VMT + as.character(Fuel) + 
+                       as.character(Model.Year) + as.character(Region) +
+                       as.character(Speed), data = pollutionAVG)
 par(mfrow = c(2, 2))
 plot(ghg.model.avg)
+summary(ghg.model.avg)
+# Multicollinearity (no issue)
+vif(ghg.model.avg)
+# Constant variance test (no issue)
+bptest = bptest(ghg.model.avg)
+bptest
 ```
+
 
 # IV. Analysis
 
