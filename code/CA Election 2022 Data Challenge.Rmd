@@ -63,6 +63,8 @@ pollutionAVG = pollution %>%
 ##########III. Data Visualization###############
 ################################################
 # Linear regression for CO2
+co2.model.avg = lm(CO2_AVG ~ as.character(Fuel), data = pollutionAVG)
+summary(co2.model.avg)
 co2.model.avg = lm(CO2_AVG ~ as.character(Fuel) + as.character(CAR_AGE) + 
                              Speed, data = pollutionAVG)
 summary(co2.model.avg)
@@ -70,6 +72,8 @@ summary(co2.model.avg)
 
 ```{r}
 # Linear regression for CH4
+ch4.model.avg = lm(CH4_AVG ~ as.character(Fuel), data = pollutionAVG)
+summary(ch4.model.avg)
 ch4.model.avg = lm(CH4_AVG ~ as.character(Fuel) + as.character(CAR_AGE) + 
                              Speed, data = pollutionAVG)
 summary(ch4.model.avg)
@@ -77,6 +81,8 @@ summary(ch4.model.avg)
 
 ```{r}
 # Linear regression for N2O
+n2o.model.avg = lm(N2O_AVG ~ as.character(Fuel), data = pollutionAVG)
+summary(n2o.model.avg)
 n2o.model.avg = lm(N2O_AVG ~ as.character(Fuel) + as.character(CAR_AGE) + 
                              Speed, data = pollutionAVG)
 summary(n2o.model.avg)
@@ -84,6 +90,8 @@ summary(n2o.model.avg)
 
 ```{r}
 # Linear regression for GHG
+ghg.model.avg = lm(GHG_AVG ~ as.character(Fuel), data = pollutionAVG)
+summary(ghg.model.avg)
 ghg.model.avg = lm(GHG_AVG ~ as.character(Fuel) + as.character(CAR_AGE) + 
                              Speed, data = pollutionAVG)
 summary(ghg.model.avg)
