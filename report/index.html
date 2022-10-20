@@ -195,7 +195,29 @@ pre code {
 ##########III. Data Visualization###############
 ################################################
 # Linear regression for CO2
-co2.model.avg = lm(CO2_AVG ~ as.character(Fuel) + as.character(CAR_AGE) + 
+co2.model.avg = lm(CO2_AVG ~ as.character(Fuel), data = pollutionAVG)
+summary(co2.model.avg)</code></pre>
+<pre><code>## 
+## Call:
+## lm(formula = CO2_AVG ~ as.character(Fuel), data = pollutionAVG)
+## 
+## Residuals:
+##        Min         1Q     Median         3Q        Max 
+## -2.289e-04 -1.078e-04  0.000e+00  2.917e-05  1.190e-03 
+## 
+## Coefficients:
+##                                    Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)                       3.983e-04  8.167e-07  487.74   &lt;2e-16 ***
+## as.character(Fuel)Electricity    -3.983e-04  1.263e-06 -315.49   &lt;2e-16 ***
+## as.character(Fuel)Gasoline        8.361e-05  1.139e-06   73.39   &lt;2e-16 ***
+## as.character(Fuel)Plug-in Hybrid -2.439e-04  1.688e-06 -144.50   &lt;2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 0.0001591 on 117022 degrees of freedom
+## Multiple R-squared:  0.5969, Adjusted R-squared:  0.5969 
+## F-statistic: 5.777e+04 on 3 and 117022 DF,  p-value: &lt; 2.2e-16</code></pre>
+<pre class="r"><code>co2.model.avg = lm(CO2_AVG ~ as.character(Fuel) + as.character(CAR_AGE) + 
                              Speed, data = pollutionAVG)
 summary(co2.model.avg)</code></pre>
 <pre><code>## 
@@ -222,7 +244,29 @@ summary(co2.model.avg)</code></pre>
 ## Multiple R-squared:  0.7276, Adjusted R-squared:  0.7276 
 ## F-statistic: 6.252e+04 on 5 and 117020 DF,  p-value: &lt; 2.2e-16</code></pre>
 <pre class="r"><code># Linear regression for CH4
-ch4.model.avg = lm(CH4_AVG ~ as.character(Fuel) + as.character(CAR_AGE) + 
+ch4.model.avg = lm(CH4_AVG ~ as.character(Fuel), data = pollutionAVG)
+summary(ch4.model.avg)</code></pre>
+<pre><code>## 
+## Call:
+## lm(formula = CH4_AVG ~ as.character(Fuel), data = pollutionAVG)
+## 
+## Residuals:
+##        Min         1Q     Median         3Q        Max 
+## -8.071e-08 -1.264e-08  0.000e+00  8.000e-11  9.295e-07 
+## 
+## Coefficients:
+##                                    Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)                       1.295e-08  3.787e-10   34.21   &lt;2e-16 ***
+## as.character(Fuel)Electricity    -1.295e-08  5.855e-10  -22.13   &lt;2e-16 ***
+## as.character(Fuel)Gasoline        6.863e-08  5.283e-10  129.91   &lt;2e-16 ***
+## as.character(Fuel)Plug-in Hybrid -1.239e-08  7.827e-10  -15.83   &lt;2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 7.379e-08 on 117022 degrees of freedom
+## Multiple R-squared:  0.1925, Adjusted R-squared:  0.1925 
+## F-statistic:  9298 on 3 and 117022 DF,  p-value: &lt; 2.2e-16</code></pre>
+<pre class="r"><code>ch4.model.avg = lm(CH4_AVG ~ as.character(Fuel) + as.character(CAR_AGE) + 
                              Speed, data = pollutionAVG)
 summary(ch4.model.avg)</code></pre>
 <pre><code>## 
@@ -249,7 +293,29 @@ summary(ch4.model.avg)</code></pre>
 ## Multiple R-squared:  0.3797, Adjusted R-squared:  0.3797 
 ## F-statistic: 1.433e+04 on 5 and 117020 DF,  p-value: &lt; 2.2e-16</code></pre>
 <pre class="r"><code># Linear regression for N2O
-n2o.model.avg = lm(N2O_AVG ~ as.character(Fuel) + as.character(CAR_AGE) + 
+n2o.model.avg = lm(N2O_AVG ~ as.character(Fuel), data = pollutionAVG)
+summary(n2o.model.avg)</code></pre>
+<pre><code>## 
+## Call:
+## lm(formula = N2O_AVG ~ as.character(Fuel), data = pollutionAVG)
+## 
+## Residuals:
+##        Min         1Q     Median         3Q        Max 
+## -4.679e-08 -1.829e-08  0.000e+00  6.854e-09  1.458e-07 
+## 
+## Coefficients:
+##                                    Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)                       6.276e-08  1.578e-10  397.81   &lt;2e-16 ***
+## as.character(Fuel)Electricity    -6.276e-08  2.439e-10 -257.32   &lt;2e-16 ***
+## as.character(Fuel)Gasoline       -1.337e-08  2.201e-10  -60.73   &lt;2e-16 ***
+## as.character(Fuel)Plug-in Hybrid -6.207e-08  3.261e-10 -190.37   &lt;2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 3.074e-08 on 117022 degrees of freedom
+## Multiple R-squared:  0.4318, Adjusted R-squared:  0.4318 
+## F-statistic: 2.964e+04 on 3 and 117022 DF,  p-value: &lt; 2.2e-16</code></pre>
+<pre class="r"><code>n2o.model.avg = lm(N2O_AVG ~ as.character(Fuel) + as.character(CAR_AGE) + 
                              Speed, data = pollutionAVG)
 summary(n2o.model.avg)</code></pre>
 <pre><code>## 
@@ -276,7 +342,29 @@ summary(n2o.model.avg)</code></pre>
 ## Multiple R-squared:  0.6446, Adjusted R-squared:  0.6446 
 ## F-statistic: 4.245e+04 on 5 and 117020 DF,  p-value: &lt; 2.2e-16</code></pre>
 <pre class="r"><code># Linear regression for GHG
-ghg.model.avg = lm(GHG_AVG ~ as.character(Fuel) + as.character(CAR_AGE) + 
+ghg.model.avg = lm(GHG_AVG ~ as.character(Fuel), data = pollutionAVG)
+summary(ghg.model.avg)</code></pre>
+<pre><code>## 
+## Call:
+## lm(formula = GHG_AVG ~ as.character(Fuel), data = pollutionAVG)
+## 
+## Residuals:
+##        Min         1Q     Median         3Q        Max 
+## -2.291e-04 -1.078e-04  0.000e+00  2.917e-05  1.191e-03 
+## 
+## Coefficients:
+##                                    Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)                       3.984e-04  8.171e-07  487.61   &lt;2e-16 ***
+## as.character(Fuel)Electricity    -3.984e-04  1.263e-06 -315.41   &lt;2e-16 ***
+## as.character(Fuel)Gasoline        8.367e-05  1.140e-06   73.41   &lt;2e-16 ***
+## as.character(Fuel)Plug-in Hybrid -2.440e-04  1.689e-06 -144.48   &lt;2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 0.0001592 on 117022 degrees of freedom
+## Multiple R-squared:  0.5968, Adjusted R-squared:  0.5968 
+## F-statistic: 5.775e+04 on 3 and 117022 DF,  p-value: &lt; 2.2e-16</code></pre>
+<pre class="r"><code>ghg.model.avg = lm(GHG_AVG ~ as.character(Fuel) + as.character(CAR_AGE) + 
                              Speed, data = pollutionAVG)
 summary(ghg.model.avg)</code></pre>
 <pre><code>## 
@@ -353,18 +441,26 @@ pollutionAVG = pollution %&gt;%
 ##########III. Data Visualization###############
 ################################################
 # Linear regression for CO2
+co2.model.avg = lm(CO2_AVG ~ as.character(Fuel), data = pollutionAVG)
+summary(co2.model.avg)
 co2.model.avg = lm(CO2_AVG ~ as.character(Fuel) + as.character(CAR_AGE) + 
                              Speed, data = pollutionAVG)
 summary(co2.model.avg)
 # Linear regression for CH4
+ch4.model.avg = lm(CH4_AVG ~ as.character(Fuel), data = pollutionAVG)
+summary(ch4.model.avg)
 ch4.model.avg = lm(CH4_AVG ~ as.character(Fuel) + as.character(CAR_AGE) + 
                              Speed, data = pollutionAVG)
 summary(ch4.model.avg)
 # Linear regression for N2O
+n2o.model.avg = lm(N2O_AVG ~ as.character(Fuel), data = pollutionAVG)
+summary(n2o.model.avg)
 n2o.model.avg = lm(N2O_AVG ~ as.character(Fuel) + as.character(CAR_AGE) + 
                              Speed, data = pollutionAVG)
 summary(n2o.model.avg)
 # Linear regression for GHG
+ghg.model.avg = lm(GHG_AVG ~ as.character(Fuel), data = pollutionAVG)
+summary(ghg.model.avg)
 ghg.model.avg = lm(GHG_AVG ~ as.character(Fuel) + as.character(CAR_AGE) + 
                              Speed, data = pollutionAVG)
 summary(ghg.model.avg)</code></pre>
