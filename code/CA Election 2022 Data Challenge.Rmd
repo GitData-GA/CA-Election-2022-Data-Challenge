@@ -1,7 +1,7 @@
 ---
-title: "CA Election 2022 Data Challenge"
+title: "California 2022 Proposition 30"
 author: "GitData"
-date: "10/12/2022"
+date: "10/19/2022"
 output:
   html_document:
     toc: yes
@@ -23,6 +23,9 @@ library(GGally)
 library(lmtest)
 library(car)
 library(onewaytests)
+require(ggiraph)
+require(ggiraphExtra)
+require(plyr)
 ```
 
 # I. Introduction and Research Questions
@@ -43,11 +46,14 @@ fuelStation = read.csv("https://caelection2022.gitdata.ga/dataset/alt_fuel_stati
                        header = TRUE)
 carSale = read.csv("https://caelection2022.gitdata.ga/dataset/New_ZEV_Sales_County.csv", 
                     header = TRUE)
-# Improve the pollution data by calculating the mean of each pollutant by county
-pollutionAVG = pollution  %>% mutate(CO2_AVG = CO2_RUNEX / Total.VMT,
-                                     CH4_AVG = CH4_RUNEX / Total.VMT,
-                                     N2O_AVG = N2O_RUNEX / Total.VMT,
-                                     GHG_AVG = (CO2_RUNEX + CH4_RUNEX + N2O_RUNEX) / Total.VMT)
+# Pollution per mile per car
+pollutionAVG = pollution %>% 
+                         mutate(CO2_AVG = CO2_RUNEX / Total.VMT,
+                                CH4_AVG = CH4_RUNEX / Total.VMT,
+                                N2O_AVG = N2O_RUNEX / Total.VMT,
+                                GHG_AVG = (CO2_RUNEX + CH4_RUNEX + N2O_RUNEX) / Total.VMT,
+                                CAR_AGE = case_when(Model.Year >= 1996 ~ "New", 
+                                          Model.Year < 1996 ~ "Old"))
 ```
 
 
@@ -57,28 +63,31 @@ pollutionAVG = pollution  %>% mutate(CO2_AVG = CO2_RUNEX / Total.VMT,
 ##########III. Data Visualization###############
 ################################################
 # Linear regression for CO2
-co2.model.avg = lm(CO2_AVG ~ as.character(Fuel), data = pollutionAVG)
+co2.model.avg = lm(CO2_AVG ~ as.character(Fuel) + as.character(CAR_AGE) + 
+                             Speed, data = pollutionAVG)
 summary(co2.model.avg)
 ```
 
 ```{r}
 # Linear regression for CH4
-ch4.model.avg = lm(CH4_AVG ~ as.character(Fuel) , data = pollutionAVG)
+ch4.model.avg = lm(CH4_AVG ~ as.character(Fuel) + as.character(CAR_AGE) + 
+                             Speed, data = pollutionAVG)
 summary(ch4.model.avg)
 ```
 
 ```{r}
 # Linear regression for N2O
-n2o.model.avg = lm(N2O_AVG ~ as.character(Fuel), data = pollutionAVG)
+n2o.model.avg = lm(N2O_AVG ~ as.character(Fuel) + as.character(CAR_AGE) + 
+                             Speed, data = pollutionAVG)
 summary(n2o.model.avg)
 ```
 
 ```{r}
 # Linear regression for GHG
-ghg.model.avg = lm(GHG_AVG ~ as.character(Fuel), data = pollutionAVG)
+ghg.model.avg = lm(GHG_AVG ~ as.character(Fuel) + as.character(CAR_AGE) + 
+                             Speed, data = pollutionAVG)
 summary(ghg.model.avg)
 ```
-
 
 # IV. Analysis
 
