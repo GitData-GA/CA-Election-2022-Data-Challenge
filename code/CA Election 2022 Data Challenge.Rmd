@@ -26,6 +26,7 @@ library(onewaytests)
 require(ggiraph)
 require(ggiraphExtra)
 require(plyr)
+library(ggpubr)
 ```
 
 # I. Introduction and Research Questions
@@ -48,16 +49,44 @@ carSale = read.csv("https://caelection2022.gitdata.ga/dataset/New_ZEV_Sales_Coun
                     header = TRUE)
 # Pollution per mile per car
 pollutionAVG = pollution %>% 
-                         mutate(CO2_AVG = CO2_RUNEX / Total.VMT,
-                                CH4_AVG = CH4_RUNEX / Total.VMT,
-                                N2O_AVG = N2O_RUNEX / Total.VMT,
-                                GHG_AVG = (CO2_RUNEX + CH4_RUNEX + N2O_RUNEX) / Total.VMT,
+                         mutate(CO2_AVG = CO2_RUNEX / Total.VMT / 1000000,
+                                CH4_AVG = CH4_RUNEX / Total.VMT / 1000000,
+                                N2O_AVG = N2O_RUNEX / Total.VMT / 1000000,
+                                GHG_AVG = (CO2_RUNEX + CH4_RUNEX + N2O_RUNEX) / Total.VMT / 1000000,
                                 CAR_AGE = case_when(Model.Year >= 1996 ~ "New", 
                                           Model.Year < 1996 ~ "Old"))
 ```
 
+Before figuring out whether the fuel type of the cars affect the emission of greenhouse gas, including Carbon dioxide, Methane, and Nitrous oxide, we need to know some basic aspects of the data we have.
+
+- `Fuel`: The types of fuel each car uses. There are four types of fuel: `Diesel` (37,968 counts), `Electricity` (27,314 counts), `Gasoline` (40,140 counts), and `Plug-in Hybrid` (11,604 counts).
+
+- `CO2_AVG`: The amount of Carbon dioxide, in million metric tons, emitted per mile per car in 2021.
+
+- `CH4_AVG`: The amount of Methane, in million metric tons, emitted per mile per car in 2021.
+
+- `N2O_AVG`: The amount of Nitrous oxide, in million metric tons, emitted per mile per car in 2021.
+
+- `GHG_AVG`: The amount of greenhouse gas (the sum of Carbon dioxide, Methane, and Nitrous oxide), in million metric tons, emitted per mile per car in 2021.
+
 
 # III. Data Visualization
+
+```{r}
+boxplot(pollutionAVG$CO2_AVG ~ pollutionAVG$Fuel)
+co2_bar = ggplot(pollutionAVG, aes(y = CO2_AVG, x = Fuel)) +
+  geom_bar(position='dodge', stat='identity')
+ch4_bar = ggplot(pollutionAVG, aes(y = CH4_AVG, x = Fuel)) +
+  geom_bar(position='dodge', stat='identity')
+n2o_bar = ggplot(pollutionAVG, aes(y = N2O_AVG, x = Fuel)) +
+  geom_bar(position='dodge', stat='identity')
+ghg_bar = ggplot(pollutionAVG, aes(y = GHG_AVG, x = Fuel)) +
+  geom_bar(position='dodge', stat='identity')
+ggarrange(co2_bar, ch4_bar, n2o_bar, ghg_bar,  
+          labels = c("A", "B", "C", "D"),
+          ncol = 2, nrow = 2)
+```
+
 ```{r}
 ################################################
 ##########III. Data Visualization###############
@@ -65,36 +94,36 @@ pollutionAVG = pollution %>%
 # Linear regression for CO2
 co2.model.avg = lm(CO2_AVG ~ as.character(Fuel), data = pollutionAVG)
 summary(co2.model.avg)
-co2.model.avg = lm(CO2_AVG ~ as.character(Fuel) + as.character(CAR_AGE) + 
-                             Speed, data = pollutionAVG)
-summary(co2.model.avg)
+#co2.model.avg = lm(CO2_AVG ~ as.character(Fuel) + as.character(CAR_AGE) + 
+#                             Speed, data = pollutionAVG)
+#summary(co2.model.avg)
 ```
 
 ```{r}
 # Linear regression for CH4
 ch4.model.avg = lm(CH4_AVG ~ as.character(Fuel), data = pollutionAVG)
 summary(ch4.model.avg)
-ch4.model.avg = lm(CH4_AVG ~ as.character(Fuel) + as.character(CAR_AGE) + 
-                             Speed, data = pollutionAVG)
-summary(ch4.model.avg)
+#ch4.model.avg = lm(CH4_AVG ~ as.character(Fuel) + as.character(CAR_AGE) + 
+#                             Speed, data = pollutionAVG)
+#summary(ch4.model.avg)
 ```
 
 ```{r}
 # Linear regression for N2O
 n2o.model.avg = lm(N2O_AVG ~ as.character(Fuel), data = pollutionAVG)
 summary(n2o.model.avg)
-n2o.model.avg = lm(N2O_AVG ~ as.character(Fuel) + as.character(CAR_AGE) + 
-                             Speed, data = pollutionAVG)
-summary(n2o.model.avg)
+#n2o.model.avg = lm(N2O_AVG ~ as.character(Fuel) + as.character(CAR_AGE) + 
+#                             Speed, data = pollutionAVG)
+#summary(n2o.model.avg)
 ```
 
 ```{r}
 # Linear regression for GHG
 ghg.model.avg = lm(GHG_AVG ~ as.character(Fuel), data = pollutionAVG)
 summary(ghg.model.avg)
-ghg.model.avg = lm(GHG_AVG ~ as.character(Fuel) + as.character(CAR_AGE) + 
-                             Speed, data = pollutionAVG)
-summary(ghg.model.avg)
+#ghg.model.avg = lm(GHG_AVG ~ as.character(Fuel) + as.character(CAR_AGE) + 
+#                             Speed, data = pollutionAVG)
+#summary(ghg.model.avg)
 ```
 
 # IV. Analysis
