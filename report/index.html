@@ -320,6 +320,22 @@ summary(ghg.model.avg)</code></pre>
 <pre class="r"><code>#ghg.model.avg = lm(GHG_AVG ~ as.character(Fuel) + as.character(CAR_AGE) + 
 #                             Speed, data = pollutionAVG)
 #summary(ghg.model.avg)</code></pre>
+<pre class="r"><code># Tax
+num_people = 14911 + 6280 + 3479 + 10335
+num_people</code></pre>
+<pre><code>## [1] 35005</code></pre>
+<pre class="r"><code>increase_tax = (34229385 + 20578127 + 14510953 + 150335815) * 0.0175 * 1000
+increase_tax</code></pre>
+<pre><code>## [1] 3843949900</code></pre>
+<pre class="r"><code>buy_car = increase_tax * 0.45
+charging_station = increase_tax * 0.35
+fire_control = increase_tax * 0.2
+# Only for car and charging station in the next 5 years
+addition = 10000000000 
+addition_car_year = addition / 5 * 0.5625
+addition_charging_year = addition / 5 * 0.4375
+total_car_2027_year = buy_car + addition_car_year
+total_charging_2027_year = charging_station + addition_charging_year</code></pre>
 </div>
 <div id="iv.-analysis" class="section level1">
 <h1>IV. Analysis</h1>
@@ -406,7 +422,21 @@ ghg.model.avg = lm(GHG_AVG ~ as.character(Fuel), data = pollutionAVG)
 summary(ghg.model.avg)
 #ghg.model.avg = lm(GHG_AVG ~ as.character(Fuel) + as.character(CAR_AGE) + 
 #                             Speed, data = pollutionAVG)
-#summary(ghg.model.avg)</code></pre>
+#summary(ghg.model.avg)
+# Tax
+num_people = 14911 + 6280 + 3479 + 10335
+num_people
+increase_tax = (34229385 + 20578127 + 14510953 + 150335815) * 0.0175 * 1000
+increase_tax
+buy_car = increase_tax * 0.45
+charging_station = increase_tax * 0.35
+fire_control = increase_tax * 0.2
+# Only for car and charging station in the next 5 years
+addition = 10000000000 
+addition_car_year = addition / 5 * 0.5625
+addition_charging_year = addition / 5 * 0.4375
+total_car_2027_year = buy_car + addition_car_year
+total_charging_2027_year = charging_station + addition_charging_year</code></pre>
 </div>
 
 
