@@ -181,6 +181,18 @@ aggregate(carSale_2021$Number.of.Vehicles,
 
 4. Wildfire Response and Prevention Programs fundings
 
+```{r}
+budget = read.csv("https://caelection2022.gitdata.ga/dataset/Historical_Expenditures.csv", 
+                    header = TRUE)
+budget_clean = budget %>%
+               filter(Department %in% c("Office of the State Fire Marshall", 
+                                        "Department of Forestry and Fire Protection"))
+budget_clean = budget_clean %>%
+               filter(Fund %in% c("General Fund", "Special Funds")) %>%
+               arrange(desc(Amount))
+budget_clean = budget_clean[1:160,]
+```
+
 
 
 
