@@ -31,7 +31,16 @@ library(ggpubr)
 
 # I. Introduction and Research Questions
 
-// Type your solution here
+California has been a pioneer in U.S. air quality legislation since the 1940s. In 2006 California passed Assembly Bill 32 (AB 32), which created a comprehensive, multi-year program to reduce greenhouse gas (GHG) emissions in California. In 2050, the emission of greenhouse gas should be cut to 80% below the 1990 level. According to the California Air Resource Board, transportation produced about 41% of greenhouse gas emissions in 2019. Moreover, the California Air Resource Board reported that the wildfire produced 106.7 million tons of carbon dioxide in 2020 and 85.1 million tons in 2021. The state wants to decrease greenhouse gas emissions by having more electric cars and preventing wildfires. This is what Proposition 30 is going to do.
+
+Proposition 30 is going to increase a 1.75% tax on Californians who earn above $2 million per year to fund programs to reduce greenhouse gas emissions and prevent wildfires. The tax plans to start in 2023 and will end by 2043 or earlier if we can maintain the expected amount of greenhouse gas emissions for three consecutive calendar years.
+
+80 percent of the tax revenue will be invested in the Zero Emission Vehicle (ZEV) program. Specifically, 45 percent in helping people buy electric vehicles and 35 percent in installing more charging stations. The state government decided to dedicate an additional $10 billion over the next five years to the program in this year’s budget.
+
+20 percent of the tax revenue will be spent on Wildfire Response and Prevention Programs. In general, most of this money will be used to hire, train, and retain state firefighters. The rest of the money could be used for other wildfire response and prevention activities.
+
+We will figure out whether more electric vehicles can help reduce greenhouse gas emissions. Based on the tax revenue and the additional $10 billion funded by the government, we will find out how many electric vehicles can be used and the amount of greenhouse gas that can be reduced. We will find out how much greenhouse gas can be reduced after funding the Wildfire Response and Prevention Programs. Finally, we will evaluate if our goal can be achieved, which is whether greenhouse gas emissions can be cut to 80% below the 1990 level by 2050.
+
 
 # II. Data Information
 ```{r, include=FALSE}
