@@ -190,7 +190,31 @@ budget_clean = budget %>%
 budget_clean = budget_clean %>%
                filter(Fund %in% c("General Fund", "Special Funds")) %>%
                arrange(desc(Amount))
-budget_clean = budget_clean[1:160,]
+budget_clean = budget_clean[1:160,] %>% arrange(desc(Fiscal.Year))
+budget_clean = budget_clean[-c(1:5, 86:160),]
+budget_clean$Amount = gsub(",","",budget_clean$Amount)
+budget_clean$Amount = as.numeric(gsub("\\$","",budget_clean$Amount)) * 1000
+budget_clean = as.data.frame(aggregate(budget_clean$Amount, 
+                             by=list(Category=budget_clean$Fiscal.Year), FUN=sum))
+Fire_CO2 = c(5.4, 6.7, 13.5, 19.7, 5.7, 2.6, 13.5, 20.0, 42.8, 9.2, 1.9, 3.1, 
+             11.4, 14.7, 17.2, 19.2, 10.5, 31.3, 13.1, 4.8, 106.7, 85.1)
+budget_clean$Fire_CO2 = Fire_CO2
+colnames(budget_clean) <- c('Year','Fund','CO2')
+```
+
+We collect data about two types of funds: Special funds and General fund from the government to the two departments Office of the State Fire Marshall and Department of Forestry and Fire Protection from 2000-2021 and the corresponding Carbon dioxide. 
+
+Special funds are established by a government to collect money that must be used for a specific project. General fund is the primary fund used by a government entity. 
+
+Office of the State Fire Marshall (OSFM)’s purpose is to protect life and property through the development and application of fire prevention, engineering, training and education, and enforcement. The Department of Forestry and Fire Protection serves and safeguards the people and protects the property and resources of California. 
+
+- `CO2`: The amount of Carbon dioxide produced by wildfires from 2000 to 2021. 
+
+- `Fund`: The money funded, in dollars, by the government to the Office of the State Fire Marshall and the Department of Forestry and Fire Protection each year from 2000 to 2021.
+
+
+```{r}
+summary(lm(CO2 ~ Fund, data = budget_clean))
 ```
 
 
