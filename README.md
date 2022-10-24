@@ -6,11 +6,25 @@
 
 We figured out whether more electric vehicles can help reduce greenhouse gas emissions. Based on the tax revenue and the additional $10 billion funded by the government, we will find out how many electric vehicles can be used and the amount of greenhouse gas that can be reduced. We also found out how much greenhouse gas can be reduced after funding the Wildfire Response and Prevention Programs. Finally, we evaluated if our goal can be achieved, which is whether greenhouse gas emissions can be cut to 80% below the 1990 level by 2050.
 
+## Project Dashboard:
+
+https://caelection2022.gitdata.ga/dashboard/
+
 ## Tools Used:
 
 R Studio
 
 Excel
+
+# Read Our Analysis Report:
+
+## Read Online
+
+https://caelection2022.gitdata.ga/report/
+
+## Read as PDF
+
+https://caelection2022.gitdata.ga/report/California%202022%20Proposition%2030%20Analysis%20-%20GitData.pdf
 
 ## Data Sources & Reference:
 
@@ -41,16 +55,6 @@ Excel
 [13] Preliminary US Greenhouse Gas Emissions Estimates for 2021 https://rhg.com/research/preliminary-us-emissions-2021/#:~:text=Based%20on%20preliminary%20data%20for,remained%205%25%20below%202019%20levels.
 
 [14] California’s wildfires are causing more and more damage https://www.weforum.org/agenda/2022/07/californian-wildfires-danger-environment/
-
-# Read Our Analysis Report:
-
-## Read Online
-
-https://caelection2022.gitdata.ga/report/
-
-## Read as PDF
-
-https://caelection2022.gitdata.ga/report/California%202022%20Proposition%2030%20Analysis%20-%20GitData.pdf
 
 # Let More People Know What Will Proposition Do
 
