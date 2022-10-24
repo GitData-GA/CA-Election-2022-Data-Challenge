@@ -1,6 +1,6 @@
 # California 2022 Proposition 30 Analysis
 
-<img src="https://caelection2022.gitdata.ga/background.gif" width=100px />
+<img src="https://caelection2022.gitdata.ga/background.gif" width=400px />
 
 ## Objectives:
 
