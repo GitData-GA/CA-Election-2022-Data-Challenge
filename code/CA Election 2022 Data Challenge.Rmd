@@ -49,7 +49,7 @@ We will figure out whether more electric vehicles can help reduce greenhouse gas
 
 # II. Data Description & Visualization
 
-Before doing the analysis, it is necessary to introduce and visualize the datasets we will use. Generally speaking, we have four major datasets to analyze.
+Before doing the analysis, it is necessary to introduce and visualize the datasets we will use. Generally speaking, we have three major datasets to analyze.
 
 ## 1. EMission FACtor (EMFAC) 2021
 
