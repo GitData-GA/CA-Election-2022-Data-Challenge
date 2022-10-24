@@ -1,5 +1,6 @@
-<img src="https://caelection2022.gitdata.ga/background.gif">
 # California 2022 Proposition 30 Analysis
+
+<img src="https://caelection2022.gitdata.ga/background.gif" 100px />
 
 ## Objectives:
 
