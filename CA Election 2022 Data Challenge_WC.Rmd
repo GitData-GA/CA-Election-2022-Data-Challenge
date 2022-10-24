@@ -61,6 +61,9 @@ pollutionAVG = pollution %>%
                       CH4_AVG = CH4_RUNEX / Total.VMT / 1000000,
                       N2O_AVG = N2O_RUNEX / Total.VMT / 1000000,
                       GHG_AVG = (CO2_RUNEX + CH4_RUNEX + N2O_RUNEX) / Total.VMT / 1000000)
+
+
+table(pollutionAVG$Fuel)
 ```
 
 
@@ -75,6 +78,10 @@ write.csv(pollutionAVG,"~/Library/CloudStorage/GoogleDrive-wncheng@ucdavis.edu/æ
 ggplot(pollutionAVG, aes(x=CO2_AVG, color=Fuel)) +
   geom_histogram(alpha=0.2,fill="#999999") 
 ```
+Interpet:
+
+
+
 
 ```{r}
 ggplot(pollutionAVG, aes(x=CO2_AVG, color=Fuel)) + geom_density(alpha=.2, fill= "#999999" )
@@ -83,8 +90,8 @@ ggplot(pollutionAVG, aes(x=CO2_AVG, color=Fuel)) + geom_density(alpha=.2, fill= 
 ```{r}
 pollutionAVG %>%
   mutate(Fuel = fct_reorder(Fuel, CO2_AVG)) %>% 
-  ggplot(aes(x=CO2_AVG, color=Fuel)) + 
-  geom_boxplot() + labs(y = "CO2 (million tons per mile)") + coord_flip()
+  ggplot(aes(x=Fuel, y=CO2_AVG, color=Fuel)) + 
+  geom_boxplot() + labs(y = "CO2 (million tons per mile)")
 ```
 
 #N2O_AVG
@@ -102,32 +109,34 @@ ggplot(pollutionAVG, aes(x= log(N2O_AVG+0.00000000000000000001), color=Fuel))+
 ```{r}
 pollutionAVG %>%
   mutate(Fuel = fct_reorder(Fuel, N2O_AVG)) %>% 
-  ggplot(aes(x=log(N2O_AVG+0.000000000000001), color=Fuel)) + 
-  geom_boxplot() + labs(y = "N2O (million tons per mile)") + coord_flip()
+  ggplot(aes(x=Fuel, y=N2O_AVG, color=Fuel)) + 
+  geom_boxplot(outline=FALSE) + labs(y = "N2O (million tons per mile)")
 ```
-
 
 
 
 ## CH4_AVG
 ```{r}
-ggplot(pollutionAVG, aes(x= log(CH4_AVG+0.00000000000000001), color=Fuel)) +
-  geom_histogram(fill="white") + geom_density(alpha=.2, fill= "#999999" ) 
+pollutionAVG %>%
+  mutate(Fuel = fct_reorder(Fuel, CH4_AVG)) %>% 
+  ggplot(aes(x=Fuel, y=CH4_AVG, color=Fuel)) + 
+  geom_boxplot() + labs(y = "CH4 (million tons per mile)")
 ```
+
+
 
 
 ```{r}
 pollutionAVG %>%
-  mutate(Fuel = fct_reorder(Fuel, CH4_AVG)) %>% 
-  ggplot(aes(x=log(CH4_AVG+0.00000000000000001), color=Fuel)) + 
-  geom_boxplot() + labs(y = "CH4 (million tons per mile)") + coord_flip()
+  mutate(Fuel = fct_reorder(Fuel, GHG_AVG)) %>% 
+  ggplot(aes(x=Fuel, y=GHG_AVG, color=Fuel)) + 
+  geom_boxplot() + labs(y = "GHG (million tons per mile)")
 ```
-```
+
 
 
 ```{r}
-ggplot(pollutionAVG, aes(y = CO2_AVG, x = Fuel)) +
-  geom_histogram(stat='identity') + labs(y = "CO2 (million tons per mile)")
+ggplot(pollutionAVG, aes(y = CO2_AVG, x = Fuel)) + geom_histogram(stat='identity') + labs(y = "CO2 (million tons per mile)")
 ```
 The first dataset we use is from the California Air Resource Board called EMission FACtor (EMFAC) 2021, which is the official emissions inventory of on-road mobile sources in California. We only consider light-duty vehicles (passenger cars) because the proposition only helps individuals to buy electric vehicles.
 
@@ -146,6 +155,7 @@ According to the United States Environmental Protection Agency (EPA), greenhouse
 ```{r, include=FALSE}
 # Number of passenger cars
 num_car = nrow(pollutionAVG)
+
 num_car
 # Number of cars by fuel types
 table(pollutionAVG$Fuel)
@@ -165,7 +175,7 @@ total_ghg = sum(pollutionAVG$CO2_RUNEX / 1000000) +
 total_ghg
 ```
 
-```{r, echo=FALSE}
+```{r}
 # Visualization
 ggplot(pollutionAVG, aes(x=Fuel, y=CO2_AVG)) + 
   geom_boxplot() + labs(y = "CO2 (million tons per mile)")
@@ -177,7 +187,7 @@ ggplot(pollutionAVG, aes(x=Fuel, y=GHG_AVG)) +
   geom_boxplot() + labs(y = "GHG (million tons per mile)")
 ```
 
-```{r, echo=FALSE}
+```{r}
 ggplot(pollutionAVG, aes(y = CO2_AVG, x = Fuel)) +
   geom_bar(stat='identity') + labs(y = "CO2 (million tons per mile)")
 ggplot(pollutionAVG, aes(y = CH4_AVG, x = Fuel)) +
@@ -209,6 +219,7 @@ income_clean[is.na(income_clean)] = 0
 ggplot(data = income_clean) + 
   stat_count(mapping = aes(x = Class))
 ```
+
 
 ```{r}
 ggplot(data = income_clean) + 
