@@ -56,6 +56,6 @@ https://caelection2022.gitdata.ga/report/California%202022%20Proposition%2030%20
 
 [14] California’s wildfires are causing more and more damage https://www.weforum.org/agenda/2022/07/californian-wildfires-danger-environment/
 
-# Let More People Know What Will Proposition Do
+# Let More People Know What Will Proposition 30 Do
 
 https://caelection2022.gitdata.ga/   OR   https://www.yes30.cf/   OR   https://www.no30.cf/
