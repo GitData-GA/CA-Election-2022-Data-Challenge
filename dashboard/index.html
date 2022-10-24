@@ -1,226 +1,250 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>W3.CSS Template</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
-.w3-row-padding img {margin-bottom: 12px}
-/* Set the width of the sidebar to 120px */
-.w3-sidebar {width: 120px;background: #222;}
-/* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
-#main {margin-left: 120px}
-/* Remove margins from "page content" on small screens */
-@media only screen and (max-width: 600px) {#main {margin-left: 0}}
-</style>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no">
+<link href="https://kb.sampleacademy.org/assets/images/favicon.ico" rel="icon" />
+<title>Knowledge Base | Sample Academy</title>
+<meta name="description" content="Knowledge Base | Sample Academy">
+
+<!-- Stylesheet
+============================== -->
+<!-- Bootstrap -->
+<link rel="stylesheet" type="text/css" href="https://static.sampledu.com/css/kb/bootstrap.min.css" />
+<!-- Font Awesome Icon -->
+<link rel="stylesheet" type="text/css" href="https://static.sampledu.com/css/kb/all.min.css" />
+<!-- Magnific Popup -->
+<link rel="stylesheet" type="text/css" href="https://static.sampledu.com/css/kb/magnific-popup.min.css" />
+<!-- Highlight Syntax -->
+<link rel="stylesheet" type="text/css" href="https://static.sampledu.com/css/kb/github.css" />
+<!-- Custom Stylesheet -->
+<link rel="stylesheet" type="text/css" href="https://static.sampledu.com/css/kb/stylesheet.css" />
 </head>
-<body class="w3-black">
 
-<!-- Icon Bar (Sidebar - hidden on small screens) -->
-<nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
-  <!-- Avatar image in top left corner -->
-  <img src="/w3images/avatar_smoke.jpg" style="width:100%">
-  <a href="#" class="w3-bar-item w3-button w3-padding-large w3-black">
-    <i class="fa fa-home w3-xxlarge"></i>
-    <p>HOME</p>
-  </a>
-  <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
-    <i class="fa fa-user w3-xxlarge"></i>
-    <p>ABOUT</p>
-  </a>
-  <a href="#photos" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
-    <i class="fa fa-eye w3-xxlarge"></i>
-    <p>PHOTOS</p>
-  </a>
-  <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
-    <i class="fa fa-envelope w3-xxlarge"></i>
-    <p>CONTACT</p>
-  </a>
-</nav>
+<body data-spy="scroll" data-target=".idocs-navigation" data-offset="125">
 
-<!-- Navbar on small screens (Hidden on medium and large screens) -->
-<div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
-  <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
-    <a href="#" class="w3-bar-item w3-button" style="width:25% !important">HOME</a>
-    <a href="#about" class="w3-bar-item w3-button" style="width:25% !important">ABOUT</a>
-    <a href="#photos" class="w3-bar-item w3-button" style="width:25% !important">PHOTOS</a>
-    <a href="#contact" class="w3-bar-item w3-button" style="width:25% !important">CONTACT</a>
+<!-- Preloader -->
+<div class="preloader">
+  <div class="lds-ellipsis">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
   </div>
 </div>
+<!-- Preloader End --> 
 
-<!-- Page Content -->
-<div class="w3-padding-large" id="main">
-  <!-- Header/Home -->
-  <header class="w3-container w3-padding-32 w3-center w3-black" id="home">
-    <h1 class="w3-jumbo"><span class="w3-hide-small">I'm</span> John Doe.</h1>
-    <p>Photographer and Web Designer.</p>
-    <img src="/w3images/man_smoke.jpg" alt="boy" class="w3-image" width="992" height="1108">
+<!-- Document Wrapper   
+=============================== -->
+<div id="main-wrapper"> 
+  
+  <!-- Header
+  ============================ -->
+  <header id="header" class="sticky-top"> 
+    <!-- Navbar -->
+    <nav class="primary-menu navbar navbar-expand-lg navbar-dropdown-dark">
+      <div class="container-fluid">
+        <!-- Sidebar Toggler -->
+		<button id="sidebarCollapse" class="navbar-toggler d-block d-md-none" type="button"><span></span><span class="w-75"></span><span class="w-50"></span></button>
+		
+		<!-- Logo --> 
+        <a class="logo ml-md-3" href="https://www.sampleacademy.org"> <img src="https://kb.sampleacademy.org/assets/images/logo.png"/> </a> 
+		<span class="text-2 ml-2"></span> 
+        <!-- Logo End -->
+        
+		<!-- Navbar Toggler -->
+		<button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#header-nav"><span></span><span></span><span></span></button>
+        
+		<div id="header-nav" class="collapse navbar-collapse justify-content-end">
+          <ul class="navbar-nav">
+            <li><a href="https://kb.sampleacademy.org/">Content</a>
+            <li class="dropdown"> <a class="dropdown-toggle" href="#">&#127760</a>
+              <ul class="dropdown-menu">
+		<li><a class="dropdown-item" href="https://kb.sampleacademy.org/getting-started/">English</a></li>
+                <li><a class="dropdown-item" href="https://kb.sampleacademy.org/cn/getting-started/">中文</a></li>
+		<li><a class="dropdown-item" href="https://kb.sampleacademy.org/ru/getting-started/">Русский</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Navbar End --> 
   </header>
-
-  <!-- About Section -->
-  <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="about">
-    <h2 class="w3-text-light-grey">My Name</h2>
-    <hr style="width:200px" class="w3-opacity">
-    <p>Some text about me. Some text about me. I am lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-      ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur
-      adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-    </p>
-    <h3 class="w3-padding-16 w3-text-light-grey">My Skills</h3>
-    <p class="w3-wide">Photography</p>
-    <div class="w3-white">
-      <div class="w3-dark-grey" style="height:28px;width:95%"></div>
-    </div>
-    <p class="w3-wide">Web Design</p>
-    <div class="w3-white">
-      <div class="w3-dark-grey" style="height:28px;width:85%"></div>
-    </div>
-    <p class="w3-wide">Photoshop</p>
-    <div class="w3-white">
-      <div class="w3-dark-grey" style="height:28px;width:80%"></div>
-    </div><br>
-    
-    <div class="w3-row w3-center w3-padding-16 w3-section w3-light-grey">
-      <div class="w3-quarter w3-section">
-        <span class="w3-xlarge">11+</span><br>
-        Partners
-      </div>
-      <div class="w3-quarter w3-section">
-        <span class="w3-xlarge">55+</span><br>
-        Projects Done
-      </div>
-      <div class="w3-quarter w3-section">
-        <span class="w3-xlarge">89+</span><br>
-        Happy Clients
-      </div>
-      <div class="w3-quarter w3-section">
-        <span class="w3-xlarge">150+</span><br>
-        Meetings
-      </div>
-    </div>
-
-    <button class="w3-button w3-light-grey w3-padding-large w3-section">
-      <i class="fa fa-download"></i> Download Resume
-    </button>
-    
-    <!-- Grid for pricing tables -->
-    <h3 class="w3-padding-16 w3-text-light-grey">My Price</h3>
-    <div class="w3-row-padding" style="margin:0 -16px">
-      <div class="w3-half w3-margin-bottom">
-        <ul class="w3-ul w3-white w3-center w3-opacity w3-hover-opacity-off">
-          <li class="w3-dark-grey w3-xlarge w3-padding-32">Basic</li>
-          <li class="w3-padding-16">Web Design</li>
-          <li class="w3-padding-16">Photography</li>
-          <li class="w3-padding-16">5GB Storage</li>
-          <li class="w3-padding-16">Mail Support</li>
-          <li class="w3-padding-16">
-            <h2>$ 10</h2>
-            <span class="w3-opacity">per month</span>
-          </li>
-          <li class="w3-light-grey w3-padding-24">
-            <button class="w3-button w3-white w3-padding-large w3-hover-black">Sign Up</button>
-          </li>
-        </ul>
-      </div>
-
-      <div class="w3-half">
-        <ul class="w3-ul w3-white w3-center w3-opacity w3-hover-opacity-off">
-          <li class="w3-dark-grey w3-xlarge w3-padding-32">Pro</li>
-          <li class="w3-padding-16">Web Design</li>
-          <li class="w3-padding-16">Photography</li>
-          <li class="w3-padding-16">50GB Storage</li>
-          <li class="w3-padding-16">Endless Support</li>
-          <li class="w3-padding-16">
-            <h2>$ 25</h2>
-            <span class="w3-opacity">per month</span>
-          </li>
-          <li class="w3-light-grey w3-padding-24">
-            <button class="w3-button w3-white w3-padding-large w3-hover-black">Sign Up</button>
-          </li>
-        </ul>
-      </div>
-    <!-- End Grid/Pricing tables -->
-    </div>
-    
-    <!-- Testimonials -->
-    <h3 class="w3-padding-24 w3-text-light-grey">My Reputation</h3>  
-    <img src="/w3images/bandmember.jpg" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:80px">
-    <p><span class="w3-large w3-margin-right">Chris Fox.</span> CEO at Mighty Schools.</p>
-    <p>John Doe saved us from a web disaster.</p><br>
-    
-    <img src="/w3images/avatar_g2.jpg" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:80px">
-    <p><span class="w3-large w3-margin-right">Rebecca Flex.</span> CEO at Company.</p>
-    <p>No one is better than John Doe.</p>
-  <!-- End About Section -->
-  </div>
+  <!-- Header End --> 
   
-  <!-- Portfolio Section -->
-  <div class="w3-padding-64 w3-content" id="photos">
-    <h2 class="w3-text-light-grey">My Photos</h2>
-    <hr style="width:200px" class="w3-opacity">
-
-    <!-- Grid for photos -->
-    <div class="w3-row-padding" style="margin:0 -16px">
-      <div class="w3-half">
-        <img src="/w3images/wedding.jpg" style="width:100%">
-        <img src="/w3images/rocks.jpg" style="width:100%">
-        <img src="/w3images/sailboat.jpg" style="width:100%">
-      </div>
-
-      <div class="w3-half">
-        <img src="/w3images/underwater.jpg" style="width:100%">
-        <img src="/w3images/chef.jpg" style="width:100%">
-        <img src="/w3images/wedding.jpg" style="width:100%">
-        <img src="/w3images/p6.jpg" style="width:100%">
-      </div>
-    <!-- End photo grid -->
+  <!-- Content
+  ============================ -->
+  <div id="content" role="main">
+    
+	<!-- Sidebar Navigation
+	============================ -->
+	<div class="idocs-navigation bg-light">
+      <ul class="nav flex-column ">
+        <li class="nav-item"><a class="nav-link active" href="#idocs_start">Getting Started</a>
+          <ul class="nav flex-column">
+            <li class="nav-item"><a class="nav-link" href="#Visit_Sample_Academy">Visit Sample Academy</a></li>
+            <li class="nav-item"><a class="nav-link" href="#Registration">Registration</a></li>
+            <li class="nav-item"><a class="nav-link" href="#Login">Login</a></li>
+            <li class="nav-item"><a class="nav-link" href="#Logout">Logout</a></li>
+          </ul>
+        </li>
+      </ul>
     </div>
-  <!-- End Portfolio Section -->
+   
+    <!-- Docs Content
+	============================ -->
+    <div class="idocs-content">
+      <div class="container"> 
+        
+        <!-- Getting Started
+		============================ -->
+        <section id="idocs_start">
+        <h1>Getting Started</h1>
+        <HR>	
+        <!-- Visit_Sample_Academy
+		============================ -->
+        <section id="Visit_Sample_Academy">
+          <h2>Visit Sample Academy</h2>
+          <p class="lead">You can visit our website by doing one of the followings:</p>
+          <ol>
+            <li>Type <em>https://www.sampleacademy.org/</em> in your web browser.</li>
+            <li>Type <em>Sample Academy</em> in search engines such as Google, Bing, DuckDuckGo, Yandex, and so on.</li>
+        </section>
+          </ol>
+	<p class="alert alert-info">We highly recommend you to bookmark our website.</p>
+        </section>
+	<HR>	
+        <!-- Registration
+		============================ -->
+        <section id="Registration">
+          <h2>Registration</h2>
+	  <p class="lead">In order to access all of our websites and services, you have to register a Sample Academy / SamplEdu Central Authentication Service (CAS) account. We provide instruction here to teach you how to register a Sample Academy / SamplEdu Central Authentication Service (CAS) account. Notice that you can use either your <strong>Microsoft</strong> account email, <strong>Google</strong> account email, or other valid emails to register.</p>
+            <ol>
+	    <strong><li>Register with a Microsoft account email</li></strong>
+		  <p></p>
+		  <p><strong>Step 1: </strong> Visit <em> <a target="_blank" href="https://www.sampleacademy.org/cas/">https://www.sampleacademy.org/cas/</a> </em> or click on &#128100 on the menu of <a target="_blank" href="https://www.sampleacademy.org">Sample Academy</a> website.</p>
+		  <p><strong>Step 2: </strong> Click on <em>Log In & Sign Up</em> button.</p>
+	          <p><strong>Step 3: </strong> Click on <em>Create one!</em>.</p>
+	          <p><strong>Step 4: </strong> Select <em>Sign up with Microsoft</em>.</p>
+		  <p><strong>Step 5: </strong> Type your Microsoft account email in the block and click on <em>Next</em>.</p>
+		  <p><strong>Step 6: </strong> Enter your Microsoft account password and click on <em>Sign in</em>.</p>
+	          <p><strong>Step 7: </strong> Choose whether you want to stay signed in.</p>
+		  <p class="alert alert-info">We recommend you to choose <em>No</em> if you are not using your own device.</p>
+	          <p><strong>Step 8: </strong> Review the permissions and click on <em>Accept</em>.</p>
+		  <p class="alert alert-info">If you do not accept, you will fail to register a Sample Academy / SamplEdu CAS account.</p>
+		  <p><strong>Step 9: </strong> Fill in all the blocks that are related to your basic information and click on <em>Continue</em>.</p>
+		  <p><strong>Step 10: </strong> You will be logged in automatically and see the homepage of Sample Academy. Registration success!</p>
+            <strong><li>Register with a Google account email</li></strong>
+		  <p></p>
+		  <p><strong>Step 1: </strong> Visit <em> <a target="_blank" href="https://www.sampleacademy.org/cas/">https://www.sampleacademy.org/cas/</a> </em> or click on &#128100 on the menu of <a target="_blank" href="https://www.sampleacademy.org">Sample Academy</a> website.</p>
+		  <p><strong>Step 2: </strong> Click on <em>Log In & Sign Up</em> button.</p>
+	          <p><strong>Step 3: </strong> Click on <em>Create one!</em>.</p>
+	          <p><strong>Step 4: </strong> Select <em>Sign up with Google</em>.</p>
+		  <p><strong>Step 5: </strong> Type your Google account email in the block and click on <em>Next</em>.</p>
+		  <p><strong>Step 6: </strong> Enter your Google account password and click on <em>Next</em>.</p>
+	          <p><strong>Step 7: </strong> Choose whether you want to stay signed in.</p>
+		  <p class="alert alert-info">We recommend you to choose <em>No</em> if you are not using your own device.</p>
+	          <p><strong>Step 8: </strong> Review the permissions and click on <em>Accept</em>.</p>
+		  <p class="alert alert-info">If you do not accept, you will fail to register a Sample Academy / SamplEdu CAS account.</p>
+		  <p><strong>Step 9: </strong> Fill in all the blocks that are related to your basic information and click on <em>Continue</em>.</p>
+		  <p><strong>Step 10: </strong> You will be logged in automatically and see the homepage of Sample Academy. Registration success!</p>
+            <strong><li>Register with other emails</li></strong>
+		  <p></p>
+		  <p><strong>Step 1: </strong> Visit <em> <a target="_blank" href="https://www.sampleacademy.org/cas/">https://www.sampleacademy.org/cas/</a> </em> or click on &#128100 on the menu of <a target="_blank" href="https://www.sampleacademy.org">Sample Academy</a> website.</p>
+		  <p><strong>Step 2: </strong> Click on <em>Log In & Sign Up</em> button.</p>
+	          <p><strong>Step 3: </strong> Click on <em>Create one!</em>.</p>
+	          <p><strong>Step 4: </strong> Select <em>Sign up with email</em>.</p>
+		  <p><strong>Step 5: </strong> Type your email in the block and click on <em>Next</em>.</p>
+		  <p><strong>Step 6: </strong> Get the verification code from your email mailbox or spam section.</p>
+		  <p><strong>Step 7: </strong> Type the verification code in the block and click on <em>Sign in</em>.</p>
+	          <p><strong>Step 8: </strong> Review the permissions and click on <em>Accept</em>.</p>
+		  <p class="alert alert-info">If you do not accept, you will fail to register a Sample Academy / SamplEdu CAS account.</p>
+		  <p><strong>Step 9: </strong> Fill in all the blocks that are related to your basic information and click on <em>Continue</em>.</p>
+		  <p><strong>Step 10: </strong> You will be logged in automatically and see the homepage of Sample Academy. Registration success!</p>
+		  <p></p>
+        </section>
+	<p class="alert alert-info">If you use a Microsoft or Google account email to register, you will login to our websites and services with your Microsoft or Google account email and password in the future. However, due to security consideration, if you use other emails to register, you will have to login to our websites and services with verification code every time in the future.</p>
+        <HR>
+		        
+	<!-- Login
+		============================ -->
+        <section id="Login">
+          <h2>Login</h2>
+	  <p class="lead">When you have a Sample Academy / SamplEdu Central Authentication Service account, you can login to all of our websites and services with the account and its credential. Similar to the registration process. There are three methods to login, you can login with either your <strong>Microsoft</strong> account email, <strong>Google</strong> account email, or other emails.</p>
+            <ol>
+	    <strong><li>Login with a Microsoft account email</li></strong>
+		  <p></p>
+		  <p><strong>Step 1: </strong> Visit <em> <a target="_blank" href="https://www.sampleacademy.org/cas/">https://www.sampleacademy.org/cas/</a> </em> or click on &#128100 on the menu of <a target="_blank" href="https://www.sampleacademy.org">Sample Academy</a> website.</p>
+		  <p><strong>Step 2: </strong> Click on <em>Log In & Sign Up</em> button.</p>
+		  <p><strong>Step 3: </strong> Type your Microsoft account email in the block and click on <em>Next</em>.</p>
+		  <p><strong>Step 4: </strong> Enter your Microsoft account password and click on <em>Sign in</em>.</p>
+	          <p><strong>Step 5: </strong> Choose whether you want to stay signed in.</p>
+		  <p class="alert alert-info">We recommend you to choose <em>No</em> if you are not using your own device.</p>
+		  <p><strong>Step 6: </strong> You will be logged in and see Sample Academy website or service. Login success!</p>
+            <strong><li>Login with a Google account email</li></strong>
+		  <p></p>
+		  <p><strong>Step 1: </strong> Visit <em> <a target="_blank" href="https://www.sampleacademy.org/cas/">https://www.sampleacademy.org/cas/</a> </em> or click on &#128100 on the menu of <a target="_blank" href="https://www.sampleacademy.org">Sample Academy</a> website.</p>
+		  <p><strong>Step 2: </strong> Click on <em>Log In & Sign Up</em> button.</p>
+		  <p><strong>Step 3: </strong> Type your Google account email in the block and click on <em>Next</em>.</p>
+		  <p><strong>Step 4: </strong> Enter your Google account password and click on <em>Next</em>.</p>
+	          <p><strong>Step 5: </strong> Choose whether you want to stay signed in.</p>
+		  <p class="alert alert-info">We recommend you to choose <em>No</em> if you are not using your own device.</p>
+		  <p><strong>Step 6: </strong> You will be logged in and see Sample Academy website or service. Login success!</p>
+            <strong><li>Login with other emails</li></strong>
+		  <p></p>
+		  <p><strong>Step 1: </strong> Visit <em> <a target="_blank" href="https://www.sampleacademy.org/cas/">https://www.sampleacademy.org/cas/</a> </em> or click on &#128100 on the menu of <a target="_blank" href="https://www.sampleacademy.org">Sample Academy</a> website.</p>
+		  <p><strong>Step 2: </strong> Click on <em>Log In & Sign Up</em> button.</p>
+		  <p><strong>Step 3: </strong> Type your email in the block and click on <em>Next</em>.</p>
+		  <p><strong>Step 4: </strong> Get the verification code from your email mailbox or spam section.</p>
+		  <p><strong>Step 5: </strong> Type the verification code in the block and click on <em>Sign in</em>.</p>
+		  <p><strong>Step 6: </strong> You will be logged in and see Sample Academy website or service. Login success!</p>
+		  <p></p>
+        </section>
+	<p class="alert alert-info">Due to security consideration, if you use other emails to register, you have to login to our websites and services with verification code every time in the future. If there are suspicious activities with your account (e.g.: login too many times with verification code in a short time), we will block your account temporarily to protect it. You can <strong><a target="_blank" href="https://forms.yandex.ru/cloud/61c79b32cb58f9d94bb327c9/">contact us</a></strong> to unlock your account.</p>	
+	<HR>
+	<!-- Logout
+		============================ -->
+        <section id="Logout">
+          <h2>Logout</h2>
+	  <p class="lead">In order to be convenient enough, you will not be logged out until you close your web browser and clear the cookies. Simply speaking, if you want to logout, you just need to clear the cookies, close your web browser, and end all the browsing sessions.</p>
+        </section>
+	<p class="alert alert-info">To provide the best experiences, we use technologies like cookies to store and/or access device information. Consenting to these technologies will allow us to process data such as browsing behavior or unique IDs on this site. Not consenting or withdrawing consent, may adversely affect certain features and functions. Please see our <strong><a href="https://kb.sampleacademy.org/cookies-policy/">cookies policy</a></strong> for more information.</p>	
+        
+		<hr class="divider">
+      </div>
+    </div>
+	
   </div>
-
-  <!-- Contact Section -->
-  <div class="w3-padding-64 w3-content w3-text-grey" id="contact">
-    <h2 class="w3-text-light-grey">Contact Me</h2>
-    <hr style="width:200px" class="w3-opacity">
-
-    <div class="w3-section">
-      <p><i class="fa fa-map-marker fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Chicago, US</p>
-      <p><i class="fa fa-phone fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Phone: +00 151515</p>
-      <p><i class="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right"> </i> Email: mail@mail.com</p>
-    </div><br>
-    <p>Let's get in touch. Send me a message:</p>
-
-    <form action="/action_page.php" target="_blank">
-      <p><input class="w3-input w3-padding-16" type="text" placeholder="Name" required name="Name"></p>
-      <p><input class="w3-input w3-padding-16" type="text" placeholder="Email" required name="Email"></p>
-      <p><input class="w3-input w3-padding-16" type="text" placeholder="Subject" required name="Subject"></p>
-      <p><input class="w3-input w3-padding-16" type="text" placeholder="Message" required name="Message"></p>
-      <p>
-        <button class="w3-button w3-light-grey w3-padding-large" type="submit">
-          <i class="fa fa-paper-plane"></i> SEND MESSAGE
-        </button>
-      </p>
-    </form>
-  <!-- End Contact Section -->
-  </div>
+  <!-- Content end --> 
   
-    <!-- Footer -->
-  <footer class="w3-content w3-padding-64 w3-text-grey w3-xlarge">
-    <i class="fa fa-facebook-official w3-hover-opacity"></i>
-    <i class="fa fa-instagram w3-hover-opacity"></i>
-    <i class="fa fa-snapchat w3-hover-opacity"></i>
-    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
-    <i class="fa fa-twitter w3-hover-opacity"></i>
-    <i class="fa fa-linkedin w3-hover-opacity"></i>
-    <p class="w3-medium">Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank" class="w3-hover-text-green">w3.css</a></p>
-  <!-- End footer -->
+  <!-- Footer
+  ============================ -->
+  <footer id="footer" class="section bg-dark footer-text-light">
+    <div class="container">
+      <p class="text-center">&copy; <script type="text/JavaScript"> document.write(new Date().getFullYear()) </script> GitData</p>
+    </div>
   </footer>
-
-<!-- END PAGE CONTENT -->
+  <!-- Footer end -->
+  
 </div>
+<!-- Document Wrapper end --> 
 
+<!-- Back To Top --> 
+<a id="back-to-top" data-toggle="tooltip" title="Back to Top" href="javascript:void(0)"><i class="fa fa-chevron-up"></i></a> 
+
+<!-- JavaScript
+============================ -->
+<script src="https://static.sampledu.com/js/kb/jquery.min.js"></script> 
+<script src="https://static.sampledu.com/js/kb/bootstrap.bundle.min.js"></script> 
+<!-- Highlight JS -->
+<script src="https://static.sampledu.com/js/kb/highlight.min.js"></script> 
+<!-- Easing --> 
+<script src="https://static.sampledu.com/js/kb/jquery.easing.min.js"></script> 
+<!-- Magnific Popup --> 
+<script src="https://static.sampledu.com/js/kb/jquery.magnific-popup.min.js"></script> 
+<!-- Custom Script -->
+<script src="https://static.sampledu.com/js/kb/theme.js"></script>
 </body>
 </html>
