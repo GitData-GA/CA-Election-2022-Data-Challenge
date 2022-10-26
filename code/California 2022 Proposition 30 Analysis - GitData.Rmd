@@ -7,13 +7,13 @@ author:
   - Li Yuan, University of Michigan Ann Arbor
 date: "10/24/2022"
 output:
+  pdf_document:
+    toc: yes
+    toc_depth: 5
   html_document:
     toc: yes
     toc_depth: '5'
     df_print: paged
-  pdf_document:
-    toc: yes
-    toc_depth: 5
 ---
 
 \clearpage
@@ -583,11 +583,12 @@ The average building cost of one charging station is about 115,360 dollars [$^{[
 From 2028 to the 2043 year, we will have 1,345,382,465 dollars in funding per year for our charging stations. Thus, there are about 186,599 new charging stations that could be built in these 16 years in an optimal situation. The increasing trend is shown as Figure 15 below.
 
 <center><p>
-Figure 15: Number of New Electric Cars in Total from 2023 to 2043
+Figure 15: Number of New Charging Stations in Total from 2023 to 2043
 </p></center>
+
 ```{r,echo=FALSE}
-ggplot(prediction, aes(y = electric_car, x = year_21)) +
-   geom_bar(stat='identity') + labs(y = "Number of new electric cars in total", x = "Year")
+ggplot(prediction, aes(y = charging_number, x = year_21)) +
+   geom_bar(stat='identity') + labs(y = "Number of new charging stations in total", x = "Year")
 ```
 
 Thus, before 2044, we will be able to build 282,836 new charging stations. 
@@ -615,11 +616,11 @@ The average price of an electric car is about 65,291 dollars[$^{[11]}$](https://
 From 2028 to the 2043 year, we will have 1,729,777,455 dollars in funding per year for our electric cars. Thus, there are about 423,893 electric cars that could be sold in these 16 years. Thus, before 2044 year, we will be able to have 642,512 new electric cars in an optimal situation. The increasing trend is shown as Figure 16 below.
 
 <center><p>
-Figure 16: Number of New Charging Stations in Total from 2023 to 2043
+Figure 16: Number of New Electric Cars in Total from 2023 to 2043
 </p></center>
 ```{r,echo=FALSE}
-ggplot(prediction, aes(y = charging_number, x = year_21)) +
-   geom_bar(stat='identity') + labs(y = "Number of new charging stations in total", x = "Year")
+ggplot(prediction, aes(y = electric_car, x = year_21)) +
+   geom_bar(stat='identity') + labs(y = "Number of new electric cars in total", x = "Year")
 ```
 
 Assume the total number of passenger cars is fixed (117,026 counts) in California. Therefore, in 2026, all passenger cars will be using electricity with zero greenhouse gas emission.
