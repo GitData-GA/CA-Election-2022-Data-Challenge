@@ -1,7 +1,7 @@
 ---
 title: "California 2022 Proposition 30 Analysis - GitData"
 author:
-  - Weilin Chen, University of California Davis
+  - Weilin Cheng, University of California Davis
   - Hengyuan Liu, University of California Davis
   - Kathy Mo, University of California Davis
   - Li Yuan, University of Michigan Ann Arbor
