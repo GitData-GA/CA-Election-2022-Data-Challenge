@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://caelection2022.gitdata.ga/sitemap.xml
