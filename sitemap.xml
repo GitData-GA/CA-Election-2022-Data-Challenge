@@ -8,24 +8,24 @@
 
 
 <url>
+  <loc>https://caelection2022.gitdata.ga/report/</loc>
+  <lastmod>2022-11-26T21:49:13+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://caelection2022.gitdata.ga/report/California%202022%20Proposition%2030%20Analysis%20-%20GitData.pdf</loc>
+  <lastmod>2022-11-26T21:49:13+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
   <loc>https://caelection2022.gitdata.ga/</loc>
   <lastmod>2022-11-26T21:49:13+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>https://caelection2022.gitdata.ga/report/</loc>
-  <lastmod>2022-11-26T21:49:13+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://caelection2022.gitdata.ga/report/California%202022%20Proposition%2030%20Analysis%20-%20GitData.pdf</loc>
-  <lastmod>2022-11-26T21:49:13+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
   <loc>https://caelection2022.gitdata.ga/dashboard/</loc>
   <lastmod>2022-11-26T21:49:13+00:00</lastmod>
-  <priority>0.80</priority>
+  <priority>1.00</priority>
 </url>
 
 
