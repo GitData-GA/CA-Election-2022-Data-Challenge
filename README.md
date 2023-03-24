@@ -1,6 +1,6 @@
 # California 2022 Proposition 30 Analysis
 
-<img src="https://caelection2022.gitdata.ga/background.gif" width=400px />
+<img src="https://caelection2022.gd.edu.kg/background.gif" width=400px />
 
 ## Objectives:
 
@@ -8,7 +8,7 @@ We figured out whether more electric vehicles can help reduce greenhouse gas emi
 
 ## Project Dashboard:
 
-https://caelection2022.gitdata.ga/dashboard/
+https://caelection2022.gd.edu.kg/dashboard/
 
 ## Tools Used:
 
@@ -20,11 +20,11 @@ Excel
 
 ## Read Online
 
-https://caelection2022.gitdata.ga/report/
+https://caelection2022.gd.edu.kg/report/
 
 ## Read as PDF
 
-https://caelection2022.gitdata.ga/report/California%202022%20Proposition%2030%20Analysis%20-%20GitData.pdf
+https://caelection2022.gd.edu.kg/report/California%202022%20Proposition%2030%20Analysis%20-%20GitData.pdf
 
 ## Data Sources & Reference:
 
@@ -58,4 +58,4 @@ https://caelection2022.gitdata.ga/report/California%202022%20Proposition%2030%20
 
 # Let More People Know What Will Proposition 30 Do
 
-https://caelection2022.gitdata.ga/   OR   https://www.yes30.cf/   OR   https://www.no30.cf/
+https://caelection2022.gd.edu.kg/
