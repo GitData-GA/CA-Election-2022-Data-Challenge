@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://caelection2022.gitdata.ga/sitemap.xml
+Sitemap: https://caelection2022.gd.edu.kg/sitemap.xml
