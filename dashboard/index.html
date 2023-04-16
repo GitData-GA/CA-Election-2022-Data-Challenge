@@ -21,6 +21,7 @@
 <link rel="stylesheet" type="text/css" href="https://static.gd.edu.kg/css/kb/github.css" />
 <!-- Custom Stylesheet -->
 <link rel="stylesheet" type="text/css" href="https://static.gd.edu.kg/css/kb/stylesheet.css" />
+<script type="text/javascript" src="https://static.gd.edu.kg/js/clappr.min.js"></script>
 </head>
 
 <body data-spy="scroll" data-target=".idocs-navigation" data-offset="125">
@@ -185,7 +186,11 @@
       
       <p></p>
       <iframe src="https://drive.google.com/file/d/1BxH0FOYiabEN8rL-Ys-kS8QpwKPisSS0/preview" loading="lazy" width="75%" height="480" allow="autoplay"></iframe>
-        </section>
+      <div id="player"></div>
+      <script>
+        var player = new Clappr.Player({source: "https://drive.google.com/file/d/1BxH0FOYiabEN8rL-Ys-kS8QpwKPisSS0/preview", parentId: "#player"});
+      </script>
+      </section>
     <HR>    
     
     <section id="Share">
