@@ -17,4 +17,4 @@ Proposition 30 is a plan in California to increase taxes on high-income earners 
 
 <hr>
 
-<img src="https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg" />
+<img src="https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg" />
