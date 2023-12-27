@@ -55,7 +55,7 @@ Before doing the analysis, it is necessary to introduce and visualize the datase
 
 ```{r, include=FALSE}
 # Load the 1st dataset
-pollution = read.csv("https://caelection2022.gitdata.ga/dataset/EMFAC2021-EI-202x.csv", 
+pollution = read.csv("https://caelection2022.gd.edu.kg/dataset/EMFAC2021-EI-202x.csv", 
                      header = TRUE)
 # Pollution per mile per car
 pollutionAVG = pollution %>% 
@@ -277,7 +277,7 @@ Overall, from Figure 8, gasoline is the largest contributor to greenhouse gas em
 
 ```{r, include=FALSE}
 # Load the 2nd dataset
-income = read.csv("https://caelection2022.gitdata.ga/dataset/2020_Combined_AR_PIT_B4A.csv", 
+income = read.csv("https://caelection2022.gd.edu.kg/dataset/2020_Combined_AR_PIT_B4A.csv", 
                     header = TRUE)
 AGI_class = income$Adjusted.Gross.Income.Class[-c(1, 2, 62, 63)]
 People_Taxable = as.numeric(gsub(",","",income$X[-c(1, 2, 62, 63)]))
@@ -364,7 +364,7 @@ The bar chart shown above (Figure 10) is about the Federal AGI by classes in Cal
 ## 3. Wildfire Response and Prevention Programs fundings 2021
 
 ```{r, include=FALSE}
-budget = read.csv("https://caelection2022.gitdata.ga/dataset/Historical_Expenditures.csv", 
+budget = read.csv("https://caelection2022.gd.edu.kg/dataset/Historical_Expenditures.csv", 
                     header = TRUE)
 budget_clean = budget %>%
                filter(Department %in% c("Office of the State Fire Marshall", 
