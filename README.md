@@ -6,7 +6,7 @@
 
 **Last Update: October 24, 2022**
 
-Proposition 30 is a plan in California to increase taxes on high-income earners in order to fund programs that promote the use of zero-emission vehicles and prevent wildfires. The tax is expected to start in 2023 and end by 2043, or earlier if the state is able to maintain its greenhouse gas emissions at expected levels for three consecutive years. Proposition 30 plans to use 80% of the tax revenue to fund the Zero Emission Vehicle program, with 45% dedicated to helping people buy electric vehicles and 35% to installing charging stations. The remaining 20% will be used for Wildfire Response and Prevention Programs. The goal is to help California reduce its greenhouse gas emissions and meet its target of reducing emissions to 80% below 1990 levels by 2050. The authors conducted a study that evaluates whether the proposition can help California achieve its goal.
+Proposition 30 in California, starting in 2023, proposes a tax increase on high-income earners to fund programs for zero-emission vehicles and wildfire prevention. The tax is set to conclude by 2043 or earlier if the state maintains greenhouse gas emissions at expected levels for three consecutive years. The study evaluates Proposition 30's effectiveness in helping California achieve its emission reduction goal of 80% below 1990 levels by 2050. Specifically, it assesses the impact of the proposed tax allocation, with 80% dedicated to the Zero Emission Vehicle program and 20% to Wildfire Response and Prevention Programs. The study aims to provide insights into the proposition's potential contribution to California's environmental objectives.
 
 ## Authors 
 
